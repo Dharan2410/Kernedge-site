@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px)); color-scheme: dark; }
+  body { @apply bg-ink font-sans text-[1.05rem] leading-relaxed text-ivory antialiased; overflow-x: clip; padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body.lock { overflow: hidden; }
+  :focus-visible { outline: 3px solid #FFC20E; outline-offset: 3px; }
+  h1, h2, h3 { @apply font-display leading-[1.08] tracking-tight; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
+
+@layer utilities {
+  /* parallax: Effects.tsx sets --py on any element with data-s */
+  .plx { transform: translate3d(0, var(--py, 0px), 0); will-change: transform; }
+  /* the Kernedge slab shapes */
+  .clip-slab { clip-path: polygon(26% 0, 100% 0, 74% 100%, 0 100%); }
+  .clip-btn { clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); }
+  .clip-panel { clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%); }
+  .clip-win { clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%); }
+  .rays {
+    background: conic-gradient(from 0deg, transparent 0 6%, rgba(255,194,14,.2) 8%, transparent 12% 20%, rgba(255,194,14,.12) 23%, transparent 28% 40%, rgba(255,194,14,.18) 43%, transparent 48% 60%, rgba(255,194,14,.1) 63%, transparent 68% 82%, rgba(255,194,14,.16) 85%, transparent 90%);
+    -webkit-mask: radial-gradient(closest-side, #000 10%, transparent 70%);
+    mask: radial-gradient(closest-side, #000 10%, transparent 70%);
+  }
+}
