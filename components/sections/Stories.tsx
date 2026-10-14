@@ -1,5 +1,6 @@
 import { journey, type Photo, type Stat } from "@/data/content";
 import { Head, section, wrap } from "../ui";
+import Image from "next/image";
 
 function StatCard({ s, i }: { s: Stat; i: number }) {
   const gold = i % 2 === 1;
@@ -22,7 +23,7 @@ function PhotoCard({ p, i }: { p: Photo; i: number }) {
     <div className="relative aspect-[4/3] w-[min(20rem,78vw)] shrink-0 overflow-hidden border border-line">
       {p.src ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={p.src} alt={p.alt} loading="lazy" className="h-full w-full object-cover" />
+        <Image src={p.src} alt={p.alt} fill sizes="320px" className="object-cover" />
       ) : (
         <div
           className={`grid h-full w-full place-items-center bg-[image:repeating-linear-gradient(135deg,rgba(255,255,255,.05)_0_12px,transparent_12px_24px)] ${

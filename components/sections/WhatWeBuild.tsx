@@ -41,7 +41,7 @@ export default function WhatWeBuild() {
                 </ul>
                 <span
                   aria-hidden
-                  className={`absolute right-6 top-6 h-3 w-12 clip-slab ${dark ? "bg-gold" : "bg-black"}`}
+                  className={`absolute right-6 top-6 hidden h-3 w-12 clip-slab md:block ${dark ? "bg-gold" : "bg-black"}`}
                 />
               </article>
             );

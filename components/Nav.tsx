@@ -1,4 +1,3 @@
-import { nav } from "@/data/content";
 import { KMark } from "./Logo";
 import { btn, wrap } from "./ui";
 
@@ -32,15 +31,6 @@ export default function Nav() {
             ))}
           </span>
         </a>
-        <ul className="hidden gap-7 lg:flex">
-          {nav.map((n) => (
-            <li key={n.href}>
-              <a href={n.href} className="font-medium text-mute transition-colors hover:text-gold">
-                {n.label}
-              </a>
-            </li>
-          ))}
-        </ul>
         <a href="#contact" className={btn}>Talk to us</a>
       </div>
     </nav>
