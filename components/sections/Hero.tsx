@@ -16,8 +16,8 @@ export default function Hero() {
           </svg>
         </div>
       </div>
-      <Slab data-s=".18" className="plx absolute right-[6vw] top-[18%] z-[1] h-[70px] w-[240px]" />
-      <Slab data-s="-.22" className="plx absolute bottom-[14%] right-[30vw] z-[1] h-9 w-[120px] opacity-50" />
+      <Slab data-s=".18" className="plx absolute right-[6vw] top-[18%] z-[1] hidden h-[70px] w-[240px] md:block" />
+      <Slab data-s="-.22" className="plx absolute bottom-[14%] right-[30vw] z-[1] hidden h-9 w-[120px] opacity-50 md:block" />
       <Slab data-s=".1" className="plx absolute bottom-[10%] left-[4vw] z-[1] h-6 w-20 opacity-30" />
       <div className={`${wrap} relative z-[2]`}>
         <h1 className="text-[clamp(2.4rem,7vw,6rem)] font-extrabold">
@@ -27,7 +27,7 @@ export default function Hero() {
               <span key={l} className="block overflow-hidden pb-[.08em]">
                 <span
                   className="block translate-y-[110%] animate-rise motion-reduce:translate-y-0 motion-reduce:animate-none"
-                  style={{ animationDelay: `${REVEAL_AT + i * 0.14}s` }}
+                  style={{ animationDelay: `calc(var(--reveal, ${REVEAL_AT}s) + ${i * 0.14}s)` }}
                 >
                   {first} <span className="text-gold">{rest.join(" ")}</span>
                 </span>
@@ -37,13 +37,13 @@ export default function Hero() {
         </h1>
         <p
           className="mb-9 mt-7 max-w-[36rem] text-[1.15rem] text-mute opacity-0 animate-fade-in motion-reduce:animate-none motion-reduce:opacity-100"
-          style={{ animationDelay: `${REVEAL_AT + 0.7}s` }}
+          style={{ animationDelay: `calc(var(--reveal, ${REVEAL_AT}s) + 0.7s)` }}
         >
           {hero.text}
         </p>
         <div
           className="flex flex-wrap gap-4 opacity-0 animate-fade-in motion-reduce:animate-none motion-reduce:opacity-100"
-          style={{ animationDelay: `${REVEAL_AT + 0.9}s` }}
+          style={{ animationDelay: `calc(var(--reveal, ${REVEAL_AT}s) + 0.9s)` }}
         >
           <a className={btn} href={hero.primary.href}>{hero.primary.label}</a>
           <a className={btnGhost} href={hero.secondary.href}>{hero.secondary.label}</a>

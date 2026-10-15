@@ -224,7 +224,7 @@ export const journey: { heading: string; lead: string; stats: Stat[]; photos: Ph
     { value: "75+", label: "Internships completed" },
     { value: "10+", label: "Workshops conducted" },
     { value: "2+", label: "Ongoing projects" },
-    { value: "1000+", label: "Students attended and trained" },
+    { value: "800+", label: "Students attended and trained" },
     { value: "10+", label: "College workshops and training sessions" },
   ],
    photos: [
@@ -245,7 +245,7 @@ export const mission = {
   quote: {
     text: "I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times.",
     by: "Bruce Lee",
-    note: "widely attributed",
+    //note: " ",
   },
   contrast: [
     { label: "10,000 kicks, once", note: "Familiar with many things, expert in none." },
@@ -256,10 +256,10 @@ export const mission = {
     text: "So we do not hand everyone the same course. We find your abilities and what makes you happy, then train you to become an expert in it.",
     steps: ["Find your abilities", "Find what makes you happy", "Train you to be an expert"],
   },
-  counselling: {
+   counselling: {
     title: "Not sure which role fits you?",
-    text: "Book a free counselling session. We will help you understand your abilities and the roles that suit you.",
-    button: "Book free counselling",
+    text: "Book a free career guidance session. We will help you understand your abilities and the roles that suit you.",
+    button: "Book free career guidance",
     href: "#contact",
   },
 };
@@ -275,5 +275,23 @@ export const why = {
 export const contact = {
   heading: "Tell us what you want to learn or build",
   lead: "Reach us for internships, training, IT services and consulting.",
-  button: "Message us on WhatsApp",
+  button: "Message",
+  subjects: [
+    "Free career guidance",
+    "Internship enquiry",
+    "Training programme",
+    "College partnership proposal",
+    "Project proposal",
+    "General enquiry",
+  ],
+};
+
+export const localArea = {
+  heading: "Training and IT services for Coimbatore and Tiruppur",
+  lead: "Whether you are a student, a college or a business, we work with you across Coimbatore and Tiruppur.",
+  cards: [
+    { title: "Students and colleges", text: "Internships, workshops and job-ability training for engineering, arts and science students, with college partnership programmes.", points: ["Internships", "College workshops", "Free career guidance"] },
+    { title: "Coimbatore businesses", text: "Software, AI and IoT solutions and team upskilling for the city's engineering, manufacturing and IT companies.", points: ["Custom software", "AI and IoT", "Team training"] },
+    { title: "Tiruppur businesses", text: "Dashboards, inventory and process software, plus staff training, for garment, knitwear and export companies.", points: ["Business software", "Process automation", "Staff training"] },
+  ],
 };

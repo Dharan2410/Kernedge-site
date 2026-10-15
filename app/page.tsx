@@ -13,6 +13,7 @@ import Why from "@/components/sections/Why";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import WhatWeDo from "@/components/sections/WhatWeDo";
+import LocalArea from "@/components/sections/LocalArea";
 
 // Reorder, add or remove sections here.
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
         <Stories />
         <Mission />
         <Why />
+        <LocalArea />
         <Contact />
       </main>
       <Footer />

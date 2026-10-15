@@ -14,8 +14,8 @@ const VB = { x: 270, y: 260, w: 740, h: 710 };
 const SLAB = { x: 781, y: 349 };
 
 /**
- * Ball fades in, falls, bounces once, hops around the page, then splashes onto the yellow
- * part of the K. The yellow fills outward from the impact, the rest of the K fades in,
+ * Ball fades in, falls, bounces once, then hops onto the yellow part of the K and splashes.
+ * The yellow fills outward from the impact, the rest of the K fades in,
  * then the screen slides up into the nav bar and the K flies into the nav mark (#nav-mark).
  */
 export default function Loader() {
@@ -51,7 +51,7 @@ export default function Loader() {
 
     const cx = W / 2, cy = H / 2, floor = cy + H * 0.12, r = 5;
 
-    // ---- path: fall, one bounce at centre, random hops, last hop lands on the slab
+    // ---- path: fall, one bounce at centre, then hops; the last hop lands on the slab
     const tFall = T.fade, tBounce = tFall + T.fall, tHops = tBounce + T.bounce;
     const segs: Seg[] = [
       { t0: tFall, t1: tBounce, a: [cx, cy - H * 0.3], b: [cx, floor], apex: 0, drop: true },

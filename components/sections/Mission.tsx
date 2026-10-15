@@ -22,7 +22,7 @@ export default function Mission() {
               {quote.text}
             </blockquote>
             <figcaption className="mt-6 font-semibold">
-              {quote.by} <span className="font-normal text-black/60">({quote.note})</span>
+            - {quote.by}
             </figcaption>
           </div>
           <div className="flex flex-col justify-center gap-6 border border-line bg-panel p-[clamp(1.6rem,4vw,3rem)] md:clip-win md:pl-16">
