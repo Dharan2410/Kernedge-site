@@ -33,7 +33,7 @@ export default function Home() {
         <Stories />
         <Mission />
         <Why />
-        <LocalArea />
+        {/* <LocalArea /> */}
         <Contact />
       </main>
       <Footer />
