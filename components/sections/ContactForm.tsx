@@ -1,11 +1,13 @@
 "use client";
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { site, contact } from "@/data/content";
 import { btn } from "../ui";
 
 const field = "w-full border border-[#3a3320] bg-[#0c0c0c] px-4 py-3.5 text-ivory focus:border-gold focus:outline-none focus:ring-[3px] focus:ring-gold/25";
 
 export default function ContactForm() {
+  const [link, setLink] = useState<string | null>(null);
+
   const onSubmit = (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     const d = new FormData(ev.currentTarget);
@@ -13,7 +15,12 @@ export default function ContactForm() {
       `Hello KERNEDGE, I am ${d.get("name")} (${d.get("email")}).\n` +
       `Subject: ${d.get("subject")}\n` +
       `${d.get("message") ?? ""}`;
-    window.open(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    const url = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
+    setLink(url); // fallback link, shown below the button
+
+    const w = window.open(url, "_blank");
+    if (w) w.opener = null;            // opened in a new tab
+    else window.location.href = url;   // popup blocked: go there in this tab instead
   };
 
   return (
@@ -45,6 +52,15 @@ export default function ContactForm() {
         <textarea name="message" rows={4} className={field} />
       </label>
       <button type="submit" className={`${btn} justify-self-start`}>{contact.button}</button>
+
+      {link && (
+        <p className="text-sm text-mute" role="status">
+          Opening WhatsApp. If nothing opened,{" "}
+          <a href={link} target="_blank" rel="noopener noreferrer" className="border-b border-gold text-ivory hover:text-gold">
+            tap here to send your message
+          </a>.
+        </p>
+      )}
     </form>
   );
 }
