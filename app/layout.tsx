@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   verification: { google, ...(bing ? { other: { "msvalidate.01": bing } } : {}) },
-  icons: { icon: "/logo-mark.jpeg" },
 };
 export const viewport: Viewport = { themeColor: "#000000", width: "device-width", initialScale: 1, viewportFit: "cover" };
 

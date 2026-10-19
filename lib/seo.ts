@@ -15,11 +15,12 @@ const tel = (p: string) => "+" + p.replace(/\D/g, "");
 export const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
+      {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       name: "Kernedge",
+      alternateName: ["Kernedge Pvt. Ltd.", new URL(SITE_URL).hostname],
       inLanguage: "en-IN",
     },
     {
