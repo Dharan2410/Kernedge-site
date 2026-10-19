@@ -34,6 +34,20 @@ export const jsonLd = {
       description: SEO.description,
       email: site.email,
       telephone: tel(site.phones[0]),
+            address: {
+        "@type": "PostalAddress",
+        streetAddress: site.address.street,
+        addressLocality: site.address.city,
+        addressRegion: site.address.state,
+        postalCode: site.address.postalCode,
+        addressCountry: site.address.country,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: site.hours.days,
+        opens: site.hours.opens,
+        closes: site.hours.closes,
+      },
       sameAs: [site.instagram.url],
       areaServed: AREAS.map((name) => ({
         "@type": "City",

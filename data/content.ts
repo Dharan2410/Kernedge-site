@@ -7,6 +7,18 @@ export const site = {
   whatsapp: "918098220800",
   email: "kernedge.pvt.ltd@gmail.com",
   instagram: { handle: "@kernedge_", url: "https://instagram.com/kernedge_" },
+    address: {
+    street: "1st Floor, 486, Kamarajar Rd, ESI, Varadharajapuram",
+    city: "Coimbatore",
+    state: "Tamil Nadu",
+    postalCode: "641015",
+    country: "IN",
+  },
+  hours: {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "10:00",
+    closes: "19:00",
+  },
 };
 
 /* ---------- Nav ---------- */
